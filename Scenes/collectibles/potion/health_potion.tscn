@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cxy7okmhe7yam"]
+
+[ext_resource type="Script" uid="uid://bqhcapn2wvvk5" path="res://Scenes/collectibles/potion/health_potion.gd" id="1_8ui8x"]
+[ext_resource type="Texture2D" uid="uid://r1q7st160ibn" path="res://Game Assets/Collectibles/image_76cb6d1d-removebg-preview.png" id="2_ehn50"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ehn50"]
+radius = 19.0
+height = 44.0
+
+[node name="HealthPotion" type="Area2D" unique_id=1437695076]
+collision_layer = 512
+script = ExtResource("1_8ui8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2099246029]
+texture = ExtResource("2_ehn50")
+hframes = 10
+vframes = 5
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117274649]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_ehn50")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=339846732]

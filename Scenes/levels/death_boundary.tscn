@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://brxh4lm3bv8wv"]
+
+[ext_resource type="Script" uid="uid://dnd5v233ji6re" path="res://Scenes/levels/death_boundary.gd" id="1_4ads1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0wxy6"]
+
+[node name="DeathBoundary" type="Area2D" unique_id=1620911427]
+script = ExtResource("1_4ads1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536778637]
+shape = SubResource("WorldBoundaryShape2D_0wxy6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

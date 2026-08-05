@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlqp2q60sjo7i"
+path="res://.godot/imported/Family Factory _ The Tree Guardian OST (3_5).mp3-97b55f16d313b95458148be1bc65ec75.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/Music/Family Factory _ The Tree Guardian OST (3_5).mp3"
+dest_files=["res://.godot/imported/Family Factory _ The Tree Guardian OST (3_5).mp3-97b55f16d313b95458148be1bc65ec75.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

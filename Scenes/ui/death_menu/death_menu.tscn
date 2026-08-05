@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c4prfi2o30ti5"]
+
+[ext_resource type="Script" uid="uid://cnbcnhddergtj" path="res://Scenes/ui/death_menu/death_menu.gd" id="1_rx8ab"]
+[ext_resource type="Theme" uid="uid://bxudf6b5ukcf4" path="res://Scenes/ui/ui_theme.tres" id="2_p77xu"]
+
+[node name="DeathMenu" type="CanvasLayer" unique_id=852352627]
+process_mode = 3
+visible = false
+script = ExtResource("1_rx8ab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1508774881]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.75
+offset_top = -22.0
+offset_right = 71.75
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="RestartButton" type="Button" parent="VBoxContainer" unique_id=557827228]
+layout_mode = 2
+theme = ExtResource("2_p77xu")
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1644790582]
+layout_mode = 2
+theme = ExtResource("2_p77xu")
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

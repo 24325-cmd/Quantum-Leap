@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnxr2i03whvxc"
+path="res://.godot/imported/53439420-retro-pickup-or-coin-sound-01-474784.mp3-b12771430c269a6afc98e2038a6fe2f7.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/53439420-retro-pickup-or-coin-sound-01-474784.mp3"
+dest_files=["res://.godot/imported/53439420-retro-pickup-or-coin-sound-01-474784.mp3-b12771430c269a6afc98e2038a6fe2f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

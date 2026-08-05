@@ -1,0 +1,56 @@
+[gd_resource type="Theme" format=3 uid="uid://bxudf6b5ukcf4"]
+
+[ext_resource type="FontFile" uid="uid://c7bwfv5d208i0" path="res://Game Assets/Fonts/Dune_Rise.otf" id="1_sh6i5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh6i5"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.3019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75u0l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx5pb"]
+bg_color = Color(0.22352941, 0.22352941, 0.22352941, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goo45"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pj2ec"]
+bg_color = Color(0, 0, 0, 0.6)
+
+[resource]
+default_font = ExtResource("1_sh6i5")
+Button/colors/icon_disabled_color = Color(0.27489188, 0.28847066, 0.24359635, 0.4)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_sh6i5")
+Button/styles/disabled = SubResource("StyleBoxFlat_sh6i5")
+Button/styles/focus = SubResource("StyleBoxFlat_75u0l")
+Button/styles/hover = SubResource("StyleBoxFlat_jx5pb")
+Button/styles/normal = SubResource("StyleBoxFlat_goo45")
+Button/styles/pressed = SubResource("StyleBoxFlat_pj2ec")

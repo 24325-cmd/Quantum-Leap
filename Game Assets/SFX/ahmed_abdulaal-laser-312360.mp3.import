@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6gcisspbtut4"
+path="res://.godot/imported/ahmed_abdulaal-laser-312360.mp3-6b03ebbdd08c0a1d1665c5f40e7ba350.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/ahmed_abdulaal-laser-312360.mp3"
+dest_files=["res://.godot/imported/ahmed_abdulaal-laser-312360.mp3-6b03ebbdd08c0a1d1665c5f40e7ba350.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

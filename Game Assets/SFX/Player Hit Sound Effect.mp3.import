@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drnrin2fxn3m0"
+path="res://.godot/imported/Player Hit Sound Effect.mp3-1bfc20d7faad4e83fa71efd1d9e69387.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/Player Hit Sound Effect.mp3"
+dest_files=["res://.godot/imported/Player Hit Sound Effect.mp3-1bfc20d7faad4e83fa71efd1d9e69387.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

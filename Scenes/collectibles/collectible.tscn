@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bv2xy7i07rc7l"]
+
+[ext_resource type="Script" uid="uid://cm5xfih7o8ign" path="res://Scenes/collectibles/collectible.gd" id="1_0ft0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vw7kr"]
+size = Vector2(8, 9)
+
+[node name="Collectible" type="Area2D" unique_id=176765612]
+collision_layer = 512
+script = ExtResource("1_0ft0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1756518507]
+position = Vector2(0, -3.9999967)
+scale = Vector2(0.045, 0.045)
+offset = Vector2(-59.515, 0)
+hframes = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=954176629]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_vw7kr")

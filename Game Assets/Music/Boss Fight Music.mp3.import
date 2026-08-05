@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqb5bdmyuckhu"
+path="res://.godot/imported/Boss Fight Music.mp3-caa8185e3b7270521e91897a05d0cecc.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/Music/Boss Fight Music.mp3"
+dest_files=["res://.godot/imported/Boss Fight Music.mp3-caa8185e3b7270521e91897a05d0cecc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

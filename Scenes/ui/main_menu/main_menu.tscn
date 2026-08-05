@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dmf2lwe6ou5gd"]
+
+[ext_resource type="Script" uid="uid://drrdev3ajy7r4" path="res://Scenes/ui/main_menu/main_menu.gd" id="1_sjv6i"]
+[ext_resource type="VideoStream" uid="uid://cwq3ivl1ylo3v" path="res://Game Assets/Game Menu .ogv" id="2_jo6yo"]
+[ext_resource type="Theme" uid="uid://bxudf6b5ukcf4" path="res://Scenes/ui/ui_theme.tres" id="3_1ggui"]
+
+[node name="MainMenu" type="Control" unique_id=157467764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sjv6i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1012525807]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1438293489]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_jo6yo")
+autoplay = true
+expand = true
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1040732002]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -130.0
+offset_right = 65.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="TutorialCheckBox" type="CheckBox" parent="CanvasLayer/ButtonContainer" unique_id=1069182463]
+layout_mode = 2
+theme = ExtResource("3_1ggui")
+button_pressed = true
+text = "Play Tutorial"
+
+[node name="StartButton" type="Button" parent="CanvasLayer/ButtonContainer" unique_id=1069182462]
+layout_mode = 2
+theme = ExtResource("3_1ggui")
+text = "START"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/ButtonContainer" unique_id=651186395]
+layout_mode = 2
+theme = ExtResource("3_1ggui")
+text = "EXIT"
+
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]

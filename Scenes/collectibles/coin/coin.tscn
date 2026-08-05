@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dq4fcqllxwi8u"]
+
+[ext_resource type="Script" uid="uid://ckfp5evjmj8ou" path="res://Scenes/collectibles/coin/coin.gd" id="1_np5fk"]
+[ext_resource type="AudioStream" uid="uid://dnxr2i03whvxc" path="res://Game Assets/SFX/53439420-retro-pickup-or-coin-sound-01-474784.mp3" id="3_lvgmr"]
+[ext_resource type="Texture2D" uid="uid://dldvrvuljyng3" path="res://Game Assets/Collectibles/Broken Tech Piece Collectible SpriteSheet brighter.png" id="3_pms0h"]
+
+[sub_resource type="Animation" id="Animation_7p5vh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-59.515, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pms0h"]
+resource_name = "default"
+length = 1.5714285
+loop_mode = 1
+step = 0.0009
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.14285715, 0.2857143, 0.42857146, 0.5714286, 0.71428573, 0.85714287, 1, 1.1428572, 1.2857143, 1.4285716),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.14285715, 0.2857143, 0.42857146, 0.5714286, 0.71428573, 0.8571429, 1, 1.1428572, 1.2857144, 1.4285715),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-59.515, 0), Vector2(-84.39, 0), Vector2(-88.01, 0), Vector2(-101.425, 0), Vector2(-106.32, 0), Vector2(-111.615, 0), Vector2(-111.175, 0), Vector2(75.89, 0), Vector2(61.065, 0), Vector2(48.445, 0), Vector2(34.29, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p5vh"]
+_data = {
+&"RESET": SubResource("Animation_7p5vh"),
+&"default": SubResource("Animation_pms0h")
+}
+
+[sub_resource type="CircleShape2D" id="RectangleShape2D_vw7kr"]
+radius = 24.0
+
+[node name="Coin" type="Area2D" unique_id=176765612]
+collision_layer = 512
+script = ExtResource("1_np5fk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=200032453]
+position = Vector2(0, -3.9999967)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("3_pms0h")
+offset = Vector2(-59.515, 0)
+hframes = 16
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=467864004]
+libraries/ = SubResource("AnimationLibrary_7p5vh")
+autoplay = &"default"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=170568982]
+stream = ExtResource("3_lvgmr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=954176629]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vw7kr")

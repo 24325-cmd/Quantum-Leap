@@ -1,0 +1,90 @@
+[gd_scene format=4 uid="uid://cubo5nydxide1"]
+
+[ext_resource type="Script" uid="uid://dget0n0mue71h" path="res://Scenes/levels/level.gd" id="1_ds2fb"]
+[ext_resource type="Texture2D" uid="uid://bclp5jwgqiwb5" path="res://Game Assets/Backgrounds/All source + png/All source + png/boss fight background.png" id="2_ds2fb"]
+[ext_resource type="Texture2D" uid="uid://cr0rsk8loiyfd" path="res://Game Assets/Backgrounds/All source + png/All source + png/Midground.png" id="3_yixcq"]
+[ext_resource type="Texture2D" uid="uid://cydy56d787v2n" path="res://Game Assets/Backgrounds/All source + png/All source + png/Foreground.png" id="4_x1tk8"]
+[ext_resource type="PackedScene" uid="uid://dwow5ars5nccd" path="res://Scenes/tilemaps/v_3_ground_tile_map.tscn" id="5_d8ebs"]
+[ext_resource type="PackedScene" uid="uid://dq4fcqllxwi8u" path="res://Scenes/collectibles/coin/coin.tscn" id="7_oku6j"]
+[ext_resource type="PackedScene" uid="uid://nxegs6oljn3h" path="res://Scenes/levels/world_boundary.tscn" id="8_6ldg7"]
+[ext_resource type="PackedScene" uid="uid://brxh4lm3bv8wv" path="res://Scenes/levels/death_boundary.tscn" id="9_deathb"]
+[ext_resource type="PackedScene" uid="uid://da7ocjuwld4uq" path="res://Scenes/enemies/boss/boss_wizard.tscn" id="10_boss"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cwrdj"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_03sgf"]
+normal = Vector2(1, 0)
+
+[node name="Level05" type="Node2D" unique_id=663561669]
+script = ExtResource("1_ds2fb")
+
+[node name="Parallax Background" type="Node2D" parent="." unique_id=678397365]
+
+[node name="Background" type="Parallax2D" parent="Parallax Background" unique_id=1443599841]
+scale = Vector2(0.745, 0.745)
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(471.66, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Background" unique_id=967244683]
+position = Vector2(296, -87.248314)
+scale = Vector2(0.7128099, 0.8293269)
+texture = ExtResource("2_ds2fb")
+centered = false
+
+[node name="Midground" type="Parallax2D" parent="Parallax Background" unique_id=737240790]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(683.35, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Midground" unique_id=1218203476]
+position = Vector2(56, 139)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("3_yixcq")
+centered = false
+
+[node name="Foreground" type="Parallax2D" parent="Parallax Background" unique_id=1608587919]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(685.295, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Foreground" unique_id=193648510]
+position = Vector2(73, 132)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("4_x1tk8")
+centered = false
+
+[node name="V4GroundTileMap" parent="." unique_id=1591004002 instance=ExtResource("5_d8ebs")]
+tile_map_data = PackedByteArray("AAAAAAwABQAJAAgAAAABAAwABQAJAAgAAAACAAwABQAJAAgAAAADAAwABQAJAAgAAAAEAAwABQAJAAgAAAAFAAwABQAJAAgAAAAGAAwABQAJAAgAAAAHAAwABQAJAAgAAAAIAAwABQAJAAgAAAAJAAwABQAJAAgAAAAKAAwABQAJAAgAAAALAAwABQAJAAgAAAAMAAwABQAJAAgAAAANAAwABQAJAAgAAAAOAAwABQAJAAgAAAAPAAwABQAJAAgAAAAQAAwABQAJAAgAAAARAAwABQAJAAgAAAASAAwABQAJAAgAAAATAAwABQAJAAgAAAAUAAwABQAJAAgAAAAVAAwABQAJAAgAAAAWAAwABQAJAAgAAAAXAAwABQAJAAgAAAAYAAwABQAJAAgAAAAZAAwABQAJAAgAAAAaAAwABQAJAAgAAAAbAAwABQAJAAgAAAAcAAwABQAJAAgAAAAdAAwABQAJAAgAAAAeAAwABQAJAAgAAAAfAAwABQAJAAgAAAAgAAwABQAJAAgAAAAhAAwABQAJAAgAAAAiAAwABQAJAAgAAAAjAAwABQAJAAgAAAAkAAwABQAJAAgAAAAlAAwABQAJAAgAAAAmAAwABQAJAAgAAAAnAAwABQAJAAgAAAAoAAwABQAJAAgAAAApAAwABQAJAAgAAAAqAAwABQAJAAgAAAArAAwABQAJAAgAAAAsAAwABQAJAAgAAAAtAAwABQAJAAgAAAAuAAwABQAJAAgAAAAvAAwABQAJAAgAAAAwAAwABQAJAAgAAAAxAAwABQAJAAgAAAAyAAwABQAJAAgAAAAzAAwABQAJAAgAAAA0AAwABQAJAAgAAAA1AAwABQAJAAgAAAA2AAwABQAJAAgAAAA3AAwABQAJAAgAAAA4AAwABQAJAAgAAAA5AAwABQAJAAgAAAA6AAwABQAJAAgAAAA7AAwABQAJAAgAAAA8AAwABQAJAAgAAAA9AAwABQAJAAgAAAA+AAwABQAJAAgAAAA/AAwABQAJAAgAAABAAAwABQAJAAgAAABBAAwABQAJAAgAAABCAAwABQAJAAgAAABDAAwABQAJAAgAAABEAAwABQAJAAgAAABFAAwABQAJAAgAAABGAAwABQAJAAgAAABHAAwABQAJAAgAAABIAAwABQAJAAgAAABJAAwABQAJAAgAAABKAAwABQAJAAgAAABLAAwABQAJAAgAAABMAAwABQAJAAgAAABNAAwABQAJAAgAAABOAAwABQAJAAgAAABPAAwABQAJAAgAAABQAAwABQAJAAgAAABRAAwABQAJAAgAAABSAAwABQAJAAgAAAA=")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=2146737660]
+unique_name_in_owner = true
+position = Vector2(142, 171)
+
+[node name="DeathBoundary" parent="." unique_id=1620911432 instance=ExtResource("9_deathb")]
+position = Vector2(700, 550)
+
+[node name="Coins" type="Node" parent="." unique_id=1071275230]
+
+[node name="Coin" parent="Coins" unique_id=176765612 instance=ExtResource("7_oku6j")]
+position = Vector2(291, 149)
+
+[node name="WorldBoundary" parent="." unique_id=378975517 instance=ExtResource("8_6ldg7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1200182442]
+position = Vector2(1, 32)
+shape = SubResource("WorldBoundaryShape2D_cwrdj")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="WorldBoundary2" parent="." unique_id=1403721594 instance=ExtResource("8_6ldg7")]
+position = Vector2(-66, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary2" unique_id=1197408965]
+position = Vector2(1398, 65)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_03sgf")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="BossWizard" parent="." unique_id=-1293967282 instance=ExtResource("10_boss")]
+position = Vector2(900, 171)

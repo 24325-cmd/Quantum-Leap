@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pidhnmyg8l1k"
+path="res://.godot/imported/cyberwave-orchestra-fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3-835b8b0fff2de5a8ab371bfce00d03a5.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/cyberwave-orchestra-fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3"
+dest_files=["res://.godot/imported/cyberwave-orchestra-fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3-835b8b0fff2de5a8ab371bfce00d03a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqmebe2cee25a"
+path="res://.godot/imported/Jump Whoosh Sound Effect.mp3-660cdb86957eb9dee46af5c6891b3665.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/Jump Whoosh Sound Effect.mp3"
+dest_files=["res://.godot/imported/Jump Whoosh Sound Effect.mp3-660cdb86957eb9dee46af5c6891b3665.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

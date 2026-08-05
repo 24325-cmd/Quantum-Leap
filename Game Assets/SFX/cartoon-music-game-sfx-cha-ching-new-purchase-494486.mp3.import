@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnd4q455wdrir"
+path="res://.godot/imported/cartoon-music-game-sfx-cha-ching-new-purchase-494486.mp3-60ca9ea15a8f66e033a8b134439ebf9b.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/cartoon-music-game-sfx-cha-ching-new-purchase-494486.mp3"
+dest_files=["res://.godot/imported/cartoon-music-game-sfx-cha-ching-new-purchase-494486.mp3-60ca9ea15a8f66e033a8b134439ebf9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

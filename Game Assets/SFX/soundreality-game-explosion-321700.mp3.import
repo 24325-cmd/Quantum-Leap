@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csucm7seo0vtt"
+path="res://.godot/imported/soundreality-game-explosion-321700.mp3-03fee5713c9dd81571af0df8942e52bb.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/soundreality-game-explosion-321700.mp3"
+dest_files=["res://.godot/imported/soundreality-game-explosion-321700.mp3-03fee5713c9dd81571af0df8942e52bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dl7s1x3syb36l"
+path="res://.godot/imported/Rain Oil _ The Tree Guardian OST (4_5).mp3-95b3de7759bcd5326e54ae3f1676fdb5.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/Music/Rain Oil _ The Tree Guardian OST (4_5).mp3"
+dest_files=["res://.godot/imported/Rain Oil _ The Tree Guardian OST (4_5).mp3-95b3de7759bcd5326e54ae3f1676fdb5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

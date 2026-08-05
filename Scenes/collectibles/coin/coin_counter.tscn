@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://4blrqq8duytv"]
+
+[ext_resource type="Script" uid="uid://cmccpe2adm5vd" path="res://Scenes/collectibles/coin/coin_counter.gd" id="1_po7x0"]
+[ext_resource type="Texture2D" uid="uid://dldvrvuljyng3" path="res://Game Assets/Collectibles/Broken Tech Piece Collectible SpriteSheet brighter.png" id="2_binkm"]
+[ext_resource type="FontFile" uid="uid://c7bwfv5d208i0" path="res://Game Assets/Fonts/Dune_Rise.otf" id="3_tnvif"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po7x0"]
+atlas = ExtResource("2_binkm")
+region = Rect2(987.16724, 0, 226.54419, 195)
+
+[node name="CoinCounter" type="CanvasLayer" unique_id=1151065030]
+script = ExtResource("1_po7x0")
+
+[node name="Control" type="Control" parent="." unique_id=718212003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1523028734]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.289993
+offset_right = 522.34076
+offset_bottom = 195.0
+grow_horizontal = 2
+rotation = -6.2831855
+scale = Vector2(0.085, 0.085)
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer" unique_id=1477885980]
+layout_mode = 2
+texture = SubResource("AtlasTexture_po7x0")
+
+[node name="CoinCount" type="Label" parent="Control/HBoxContainer" unique_id=1672528450]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tnvif")
+theme_override_font_sizes/font_size = 53
+text = "COINS"

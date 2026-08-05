@@ -1,0 +1,110 @@
+[gd_scene format=4 uid="uid://b33rut18tpaek"]
+
+[ext_resource type="Script" uid="uid://dget0n0mue71h" path="res://Scenes/levels/level.gd" id="1_nvedk"]
+[ext_resource type="Texture2D" uid="uid://bhgmyj8v6c580" path="res://Game Assets/Backgrounds/All source + png/All source + png/Backround 2.png" id="2_fpjc1"]
+[ext_resource type="Texture2D" uid="uid://cr0rsk8loiyfd" path="res://Game Assets/Backgrounds/All source + png/All source + png/Midground.png" id="3_a3nqg"]
+[ext_resource type="Texture2D" uid="uid://cydy56d787v2n" path="res://Game Assets/Backgrounds/All source + png/All source + png/Foreground.png" id="4_jwnil"]
+[ext_resource type="PackedScene" uid="uid://dwow5ars5nccd" path="res://Scenes/tilemaps/v_3_ground_tile_map.tscn" id="5_8xbrq"]
+[ext_resource type="PackedScene" uid="uid://dq4fcqllxwi8u" path="res://Scenes/collectibles/coin/coin.tscn" id="7_wj4ua"]
+[ext_resource type="PackedScene" uid="uid://nxegs6oljn3h" path="res://Scenes/levels/world_boundary.tscn" id="8_wj1m7"]
+[ext_resource type="PackedScene" uid="uid://l4it0vhsex0u" path="res://Scenes/enemies/Cyborg.tscn" id="9_nckaw"]
+[ext_resource type="PackedScene" uid="uid://cdp811sqpd5ag" path="res://Scenes/levels/level_transition.tscn" id="10_nvedk"]
+[ext_resource type="PackedScene" uid="uid://brxh4lm3bv8wv" path="res://Scenes/levels/death_boundary.tscn" id="12_deathb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cwrdj"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_03sgf"]
+normal = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpjc1"]
+size = Vector2(64, 71)
+
+[node name="Level04" type="Node2D" unique_id=663561669]
+script = ExtResource("1_nvedk")
+
+[node name="Parallax Background" type="Node2D" parent="." unique_id=678397365]
+
+[node name="Background" type="Parallax2D" parent="Parallax Background" unique_id=1443599841]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(688, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Background" unique_id=967244683]
+position = Vector2(296, -212)
+scale = Vector2(1, 1.1634616)
+texture = ExtResource("2_fpjc1")
+centered = false
+
+[node name="Midground" type="Parallax2D" parent="Parallax Background" unique_id=737240790]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(683.35, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Midground" unique_id=1218203476]
+position = Vector2(56, 139)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("3_a3nqg")
+centered = false
+
+[node name="Foreground" type="Parallax2D" parent="Parallax Background" unique_id=1608587919]
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(685.295, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Foreground" unique_id=193648510]
+position = Vector2(73, 132)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("4_jwnil")
+centered = false
+
+[node name="V6GroundTileMap" parent="." unique_id=1591004002 instance=ExtResource("5_8xbrq")]
+tile_map_data = PackedByteArray("AAAFAAoABgALAAoAAAAGAAoABgAMAAoAAAAHAAoABgANAAoAAAAMAA8ABQAKAAgAAAADAAcABgAJAAcAAAADAAgABgAJAAgAAAADAAkABgAJAAkAAAADAAoABgAJAAoAAAAEAAcABgAKAAcAAAAEAAgABgAKAAgAAAAEAAkABgAKAAkAAAAEAAoABgAKAAoAAAAFAAcABgALAAcAAAAFAAgABgALAAgAAAAFAAkABgALAAkAAAAGAAcABgAMAAcAAAAGAAgABgAMAAgAAAAGAAkABgAMAAkAAAAHAAcABgANAAcAAAAHAAgABgANAAgAAAAHAAkABgANAAkAAAAHABEAAQAFAAkAAAAHABIABQAOAAQAAAAHABMABQAOAAUAAAAHABQABQAOAAYAAAAIABEAAQAFAAkAAAAIABIABQAPAAQAAAAIABMABQAPAAUAAAAIABQABQAPAAYAAAAJABEAAQAGAAkAAAAJABIABQAQAAQAAAAJABMABQAQAAUAAAAJABQABQAQAAYAAAALAAoAAQADAAcAAAAMAAoAAQADAAcAAAAMABAABQAOAAkAAAAMABEABQAOAAoAAAAMABIABQAOAAsAAAANAAoAAQADAAcAAAAOAAoAAQADAAcAAAAPAAoAAQADAAcAAAAQAA0ABQAKAAgAAAAQAA4ABQAMAAoAAAAQAA8ABQAMAAsAAAARAA0ABQAKAAgAAAARAA4ABQANAAoAAAARAA8ABQANAAsAAAASAA0ABQAKAAgAAAASAA4ABQANAAcAAAASAA8ABQANAAgAAAATAA0ABQAKAAgAAAATAA4ABQAOAAcAAAATAA8ABQAOAAgAAAAUAA0ABQAKAAgAAAAUAA4ABQAQAAoAAAAUAA8ABQAQAAsAAAAVAA0ABQAKAAgAAAAVAA4ABQARAAoAAAAVAA8ABQARAAsAAAAKAAIAAQAFAAkAAAAPAAMABQAMAAoAAAAQAAMABQANAAoAAAARAAMABQAOAAoAAAASAAMABQAPAAoAAAAPAAIABQAMAAkAAAAQAAIABQANAAkAAAARAAIABQAOAAkAAAASAAIABQAPAAkAAAAPAAEAAQADAAcAAAAQAAEAAQADAAcAAAARAAEAAQADAAcAAAASAAEAAQADAAcAAAAXAAIABQACAAUAAAAXAAMABQACAAcAAAAYAAIABQADAAUAAAAYAAMABQADAAcAAAAZAAIABQAEAAUAAAAZAAMABQAEAAcAAAAWAAIABQABAAUAAAAWAAMABQABAAcAAAAWAAQABgANAAkAAAAXAAQABgAOAAkAAAAYAAQABgAPAAkAAAAZAAQABgAQAAkAAAAWAAEABgAJAAcAAAAXAAEABgAJAAcAAAAYAAEABgAKAAcAAAAZAAEABgALAAcAAAAgAP//BQAOAAQAAAAgAAAABQAOAAUAAAAgAAEABQAOAAYAAAAgAPz/BQAOAAoAAAAgAP3/BQAOAAUAAAAgAP7/BQAOAAYAAAAfAAcABQAAAAgAAAAfAAgABQAAAAkAAAAfAAkABQAAAAoAAAAgAAcABQABAAgAAAAgAAgABQABAAkAAAAgAAkABQABAAoAAAAhAAcABQACAAgAAAAhAAgABQACAAkAAAAhAAkABQACAAoAAAAiAAcABQADAAgAAAAiAAgABQADAAkAAAAiAAkABQADAAoAAAAjAAcABQAEAAgAAAAjAAgABQAEAAkAAAAjAAkABQAEAAoAAAAfAAYAAQAFAAkAAAAgAAYAAQAGAAkAAAAhAAYAAQAFAAkAAAAiAAYAAQAGAAkAAAAjAAYAAQAFAAkAAAAkAAYAAQAGAAkAAAAlAAYAAQAFAAkAAAAmAAYAAQAGAAkAAAAnAAYAAQAFAAkAAAAoAAYAAQAGAAkAAAApAAYAAQAFAAkAAAAqAAYAAQAGAAkAAAAlAAIAAQAAAAYAAAAlAAMAAQAAAAcAAAAlAAQAAQAAAAgAAAAlAAUAAQAAAAkAAAAlAP7/AQAAAAYAAAAlAP//AQAAAAcAAAAlAAAAAQAAAAgAAAAlAAEAAQAAAAkAAAAkAAcAAQACAAkAAAAkAAgABQANAAcAAAAlAAcAAQADAAkAAAAlAAgABQAOAAcAAAAmAAcABgAAAAgAAAAmAAgABQAPAAcAAAAnAAcABgAAAAgAAAAnAAgABQANAAoAAAAoAAcABgAAAAgAAAAoAAgABQAOAAoAAAAkAAkABQANAAgAAAAlAAkABQAOAAgAAAAmAAkABQAPAAgAAAAnAAkABQAOAAgAAAAoAAkABQAPAAgAAAApAAcABQAOAAUAAAApAAgABQAOAAYAAAAqAAcABQAPAAUAAAAqAAgABQAPAAYAAAApAAkABQAAAAYAAAAqAAkABQAAAAYAAAAgAPn/AQADAAMAAAAhAPn/AQAEAAMAAAAiAPn/AQAFAAMAAAAjAPn/AQAGAAMAAAAkAPn/AQAHAAMAAAAlAPn/AQAIAAMAAAAmAPn/AQADAAMAAAAnAPn/AQAEAAMAAAAoAPn/AQAFAAMAAAApAPn/AQAGAAMAAAAqAPn/AQAHAAMAAAArAPn/AQAIAAMAAAAsAPn/AQADAAMAAAAtAPn/AQAEAAMAAAAuAPn/AQAFAAMAAAAvAPn/AQAGAAMAAAAwAPn/AQAHAAMAAAAxAPn/AQAIAAMAAAAgAPr/BQAMAAoAAAAgAPv/BQAMAAsAAAAkAAIAAQAGAAkAAAAhAP7/AQAGAAkAAAAlAP3/AQAAAAgAAAAlAPz/AQAAAAgAAAAvAAQAAQAFAAkAAAAvAAUAAQAFAAoAAAAwAAQAAQAGAAkAAAAwAAUAAQAGAAoAAAA1AAIABgANAAcAAAA2AAIABgANAAcAAAA3AAIABgANAAcAAAA4AAIABgANAAcAAAA2AAMABgAPAAkAAAA2AAQABgAPAAoAAAA3AAMABgAQAAkAAAA3AAQABgAQAAoAAAA4AAMABgARAAkAAAA4AAQABgARAAoAAAA1AAMABgAAAAYAAAA1AAQABgAAAAcAAAA+AAwAAQAJAAkAAAA+AA0ABQAMAAoAAAA/AAwAAQAJAAoAAAA/AA0ABQANAAoAAABAAAwABQAOAAkAAABAAA0ABQAOAAoAAABBAAwABQABAAYAAABBAA0ABQABAAcAAABCAAwABQACAAYAAABCAA0ABQACAAcAAABDAAwABQADAAYAAABDAA0ABQADAAcAAABEAAwABQAEAAYAAABEAA0ABQAEAAcAAABFAAwAAQAJAAoAAABFAA0ABgAPAAoAAABBAAsABQABAAUAAABCAAsABQACAAUAAABDAAsABQADAAUAAABEAAsABQAEAAUAAAA+AAoAAQAHAAcAAAA/AAoAAQADAAcAAABAAAoAAQADAAcAAABBAAoAAQADAAcAAABCAAoAAQADAAcAAABDAAoAAQADAAcAAABEAAoAAQADAAcAAAA+AAsAAQAJAAkAAABFAAoAAQADAAcAAABFAAsAAQAJAAkAAAA/AAsAAQAJAAkAAABAAAsAAQAJAAIAAABMAAcABgAIAAkAAABNAAcABgAJAAkAAABOAAcABgAKAAkAAABPAAcABgALAAkAAABMAAYABgAIAAgAAABNAAYABgAJAAgAAABOAAYABgAKAAgAAABPAAYABgALAAgAAABMAAUABgAIAAcAAABNAAUABgAJAAcAAABOAAUABgAKAAcAAABPAAUABgALAAcAAABQAAUABgAMAAcAAABMAAgABgAIAAoAAABNAAgABgAJAAoAAABOAAgABgAKAAoAAABPAAgABgALAAoAAABQAAYABgAMAAgAAABQAAcABgAMAAkAAABQAAgABgAMAAoAAABRAAUABgANAAcAAABRAAYABgANAAgAAABRAAcABgANAAkAAABRAAgABgANAAoAAABJAAgAAQADAAcAAAAFABIAAQAJAAgAAAAFABMAAQAJAAgAAAAGABIAAQAKAAgAAAAGABMAAQAKAAgAAAAFABQAAQAJAAkAAAAGABQAAQAKAAkAAAAGABEAAQADAAcAAAAFABEAAQADAAcAAAA=")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=2146737660]
+unique_name_in_owner = true
+position = Vector2(83, 272)
+
+[node name="DeathBoundary" parent="." unique_id=1620911431 instance=ExtResource("12_deathb")]
+position = Vector2(700, 550)
+
+[node name="Coins" type="Node" parent="." unique_id=1071275230]
+
+[node name="Coin" parent="Coins" unique_id=176765612 instance=ExtResource("7_wj4ua")]
+position = Vector2(201, 232)
+
+[node name="Coin2" parent="Coins" unique_id=1315677033 instance=ExtResource("7_wj4ua")]
+position = Vector2(648, 76)
+
+[node name="Coin3" parent="Coins" unique_id=1485527258 instance=ExtResource("7_wj4ua")]
+position = Vector2(1057, 144)
+
+[node name="WorldBoundary" parent="." unique_id=378975517 instance=ExtResource("8_wj1m7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=1200182442]
+position = Vector2(1, 32)
+shape = SubResource("WorldBoundaryShape2D_cwrdj")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="WorldBoundary2" parent="." unique_id=1403721594 instance=ExtResource("8_wj1m7")]
+position = Vector2(-66, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary2" unique_id=1197408965]
+position = Vector2(1398, 65)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_03sgf")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="Enemy" parent="." unique_id=53468235 instance=ExtResource("9_nckaw")]
+position = Vector2(601, -67)
+
+[node name="Enemy2" parent="." unique_id=1251625591 instance=ExtResource("9_nckaw")]
+position = Vector2(889, 22)
+
+[node name="LevelTransition" parent="." unique_id=1412430287 instance=ExtResource("10_nvedk")]
+position = Vector2(0, 5)
+next_level_path = "uid://cubo5nydxide1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelTransition" unique_id=1958174444]
+position = Vector2(1275, 39)
+shape = SubResource("RectangleShape2D_fpjc1")

@@ -1,0 +1,96 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scenes/enemies/boss/boss_fire_wall.gd" id="1_firewall"]
+[ext_resource type="Texture2D" uid="uid://ba4bgsd1j4hb2" path="res://Game Assets/fx/explosion spritsheet.png" id="2_explosion"]
+[ext_resource type="AudioStream" uid="uid://bf63vvowuykve" path="res://Game Assets/SFX/lumora_studios-pixel-explosion-319166.mp3" id="3_sfx"]
+[ext_resource type="PackedScene" uid="uid://c5llwuwflcb7i" path="res://Scenes/components/hurtbox/hurtbox.tscn" id="4_hurtbox"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flame:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_burn"]
+resource_name = "burn"
+length = 0.48
+step = 0.04
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flame:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24, 0.28, 0.32, 0.36, 0.4, 0.44),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flame:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.95, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_firewall"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"burn": SubResource("Animation_burn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
+size = Vector2(90, 100)
+
+[node name="BossFireWall" type="Node2D" unique_id=3002000001]
+script = ExtResource("1_firewall")
+
+[node name="Flame" type="Sprite2D" parent="." unique_id=3002000002]
+position = Vector2(0, -51)
+scale = Vector2(0.7, 0.8)
+modulate = Color(0.75, 0.35, 1, 0)
+texture = ExtResource("2_explosion")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=3002000003]
+libraries/ = SubResource("AnimationLibrary_firewall")
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=3002000004]
+stream = ExtResource("3_sfx")
+volume_db = -8.0
+
+[node name="Hurtbox" parent="." unique_id=3002000005 instance=ExtResource("4_hurtbox")]
+collision_layer = 16
+damage = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=3002000006]
+position = Vector2(0, -50)
+shape = SubResource("RectangleShape2D_hurt")

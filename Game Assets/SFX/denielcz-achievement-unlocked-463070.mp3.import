@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de0avv0xftjyi"
+path="res://.godot/imported/denielcz-achievement-unlocked-463070.mp3-d94c1e7ead8be40f00a937b0e5ec676e.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/denielcz-achievement-unlocked-463070.mp3"
+dest_files=["res://.godot/imported/denielcz-achievement-unlocked-463070.mp3-d94c1e7ead8be40f00a937b0e5ec676e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

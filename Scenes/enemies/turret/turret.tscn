@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://6uu10wf85ln6"]
+
+[ext_resource type="Script" uid="uid://tbpri5gjlu4a" path="res://Scenes/enemies/turret/turret.gd" id="1_sylys"]
+[ext_resource type="PackedScene" uid="uid://yo2txo34tpu" path="res://Scenes/components/detection/detection_component.tscn" id="2_2g27k"]
+[ext_resource type="Texture2D" uid="uid://x4n86lx6xg7" path="res://Game Assets/Characters/Enemies/turret spritesheet.png" id="3_ejj5l"]
+[ext_resource type="PackedScene" uid="uid://c5llwuwflcb7i" path="res://Scenes/components/hurtbox/hurtbox.tscn" id="4_ejj5l"]
+[ext_resource type="PackedScene" uid="uid://b3yphldfjy8x" path="res://Scenes/components/hitbox/hitbox.tscn" id="5_hitbox"]
+
+[sub_resource type="Animation" id="Animation_reset"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_turn"]
+resource_name = "turn"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-40.06, 0), Vector2(-60.025, 0), Vector2(-121.27, 0), Vector2(-132.915, 0), Vector2(-217.42, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejj5l"]
+_data = {
+&"RESET": SubResource("Animation_reset"),
+&"turn": SubResource("Animation_turn")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejj5l"]
+size = Vector2(11, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6awd2"]
+size = Vector2(284.02368, 15)
+
+[node name="Turret" type="CharacterBody2D" unique_id=1620085287]
+scale = Vector2(1.69, 1.69)
+collision_layer = 16
+collision_mask = 256
+script = ExtResource("1_sylys")
+face_left = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=92342947]
+libraries/ = SubResource("AnimationLibrary_ejj5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1500000001]
+position = Vector2(0.5, -7.5)
+shape = SubResource("RectangleShape2D_ejj5l")
+
+[node name="LedgeDetector" type="RayCast2D" parent="." unique_id=1500000006]
+target_position = Vector2(0, 15)
+collision_mask = 256
+
+[node name="DetectionComponent" parent="." unique_id=2043037165 instance=ExtResource("2_2g27k")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionComponent" unique_id=1803700972]
+position = Vector2(0, -7.500002)
+shape = SubResource("RectangleShape2D_6awd2")
+
+[node name="GunMuzzle" type="Marker2D" parent="." unique_id=1957094998]
+position = Vector2(-5, -14)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1630240501]
+position = Vector2(5.494214, -8.528987)
+scale = Vector2(0.048186373, 0.04818637)
+texture = ExtResource("3_ejj5l")
+hframes = 6
+
+[node name="Hurtbox" parent="." unique_id=1409369976 instance=ExtResource("4_ejj5l")]
+collision_layer = 16
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1065550476]
+position = Vector2(0.5, -7.5)
+shape = SubResource("RectangleShape2D_ejj5l")
+
+[node name="Hitbox" parent="." unique_id=1500000004 instance=ExtResource("5_hitbox")]
+collision_layer = 16
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1500000005]
+position = Vector2(0.5, -7.5)
+shape = SubResource("RectangleShape2D_ejj5l")
+
+[node name="Bullets" type="Node" parent="." unique_id=1464727508]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://r1h5v5c450v"
+path="res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-459db4e468491a728b054bb186786c90.sample"
+
+[deps]
+
+source_file="res://Game Assets/SFX/mixkit-sci-fi-laser-in-space-sound-2825.wav"
+dest_files=["res://.godot/imported/mixkit-sci-fi-laser-in-space-sound-2825.wav-459db4e468491a728b054bb186786c90.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

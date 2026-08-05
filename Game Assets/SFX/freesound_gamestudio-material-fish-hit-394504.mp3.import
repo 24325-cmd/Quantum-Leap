@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk28ym3tfs0ab"
+path="res://.godot/imported/freesound_gamestudio-material-fish-hit-394504.mp3-89fcc7bea9c171139ed7d9fc01aeaac7.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/freesound_gamestudio-material-fish-hit-394504.mp3"
+dest_files=["res://.godot/imported/freesound_gamestudio-material-fish-hit-394504.mp3-89fcc7bea9c171139ed7d9fc01aeaac7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nqr75orkn5io"
+path="res://.godot/imported/make_more_sound-321-go-8-bit-video-game-sound-version-1-145007.mp3-096d69f0321469da7ac2795cbe7405c1.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/make_more_sound-321-go-8-bit-video-game-sound-version-1-145007.mp3"
+dest_files=["res://.godot/imported/make_more_sound-321-go-8-bit-video-game-sound-version-1-145007.mp3-096d69f0321469da7ac2795cbe7405c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

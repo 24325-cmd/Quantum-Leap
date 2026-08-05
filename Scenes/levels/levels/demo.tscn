@@ -1,0 +1,74 @@
+[gd_scene format=4 uid="uid://cjc0ue4drg5ru"]
+
+[ext_resource type="Script" uid="uid://dget0n0mue71h" path="res://Scenes/levels/level.gd" id="1_jre0s"]
+[ext_resource type="Texture2D" uid="uid://bj2riuit3ohj3" path="res://Game Assets/Backgrounds/All source + png/All source + png/Backround 1.png" id="2_ay014"]
+[ext_resource type="Texture2D" uid="uid://cr0rsk8loiyfd" path="res://Game Assets/Backgrounds/All source + png/All source + png/Midground.png" id="3_4mpeg"]
+[ext_resource type="Texture2D" uid="uid://cydy56d787v2n" path="res://Game Assets/Backgrounds/All source + png/All source + png/Foreground.png" id="4_rbt8g"]
+[ext_resource type="PackedScene" uid="uid://uakedobb3nb7" path="res://Scenes/tilemaps/ground_tile_map.tscn" id="5_dq318"]
+[ext_resource type="PackedScene" uid="uid://nxegs6oljn3h" path="res://Scenes/levels/world_boundary.tscn" id="6_8x0oe"]
+[ext_resource type="PackedScene" uid="uid://l4it0vhsex0u" path="res://Scenes/enemies/Cyborg.tscn" id="7_avelk"]
+[ext_resource type="PackedScene" uid="uid://brxh4lm3bv8wv" path="res://Scenes/levels/death_boundary.tscn" id="8_iiew0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oho3u"]
+normal = Vector2(1, 0)
+
+[node name="DemoScene" type="Node2D" unique_id=663561669]
+script = ExtResource("1_jre0s")
+
+[node name="Parallax Background" type="Node2D" parent="." unique_id=678397365]
+
+[node name="Background" type="Parallax2D" parent="Parallax Background" unique_id=1443599841]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(688, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Background" unique_id=967244683]
+position = Vector2(296, -144)
+texture = ExtResource("2_ay014")
+centered = false
+
+[node name="Midground" type="Parallax2D" parent="Parallax Background" unique_id=737240790]
+scroll_scale = Vector2(0.5, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Midground" unique_id=1218203476]
+position = Vector2(196.99998, 141)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("3_4mpeg")
+centered = false
+
+[node name="Foreground" type="Parallax2D" parent="Parallax Background" unique_id=1608587919]
+scroll_scale = Vector2(0.9, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax Background/Foreground" unique_id=193648510]
+position = Vector2(226, 132)
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("4_rbt8g")
+centered = false
+
+[node name="GroundTileMap" parent="." unique_id=1165169760 instance=ExtResource("5_dq318")]
+tile_map_data = PackedByteArray("AAAAABEAAgADAAcAAAABABEAAgADAAcAAAACABEAAgADAAcAAAADABEAAgADAAcAAAAEABEAAgADAAcAAAAFABEAAgADAAcAAAAGABEAAgADAAcAAAAHABEAAgADAAcAAAAIABEAAgADAAcAAAAJABEAAgADAAcAAAAKABEAAgADAAcAAAALABEAAgADAAcAAAAMABEAAgADAAcAAAANABEAAgADAAcAAAAOABEAAgADAAcAAAAPABEAAgADAAcAAAAQABEAAgADAAcAAAARABEAAgADAAcAAAASABEAAgADAAcAAAATABEAAgADAAcAAAAUABEAAgADAAcAAAAVABEAAgADAAcAAAAWABEAAgADAAcAAAAXABEAAgADAAcAAAAYABEAAgADAAcAAAAZABEAAgADAAcAAAAaABEAAgADAAcAAAAbABEAAgADAAcAAAAcABEAAgADAAcAAAAdABEAAgADAAcAAAAeABEAAgADAAcAAAAfABEAAgADAAcAAAAgABEAAgADAAcAAAAhABEAAgADAAcAAAAiABEAAgADAAcAAAAjABEAAgADAAcAAAAkABEAAgADAAcAAAAlABEAAgADAAcAAAAmABEAAgADAAcAAAAnABEAAgADAAcAAAAoABEAAgADAAcAAAApABEAAgADAAcAAAAqABEAAgADAAcAAAArABEAAgADAAcAAAAsABEAAgADAAcAAAAtABEAAgADAAcAAAAuABEAAgADAAcAAAAvABEAAgADAAcAAAAwABEAAgADAAcAAAAxABEAAgADAAcAAAAyABEAAgADAAcAAAAzABEAAgADAAcAAAA0ABEAAgADAAcAAAA1ABEAAgADAAcAAAA2ABEAAgADAAcAAAA3ABEAAgADAAcAAAA4ABEAAgADAAcAAAA5ABEAAgADAAcAAAA6ABEAAgADAAcAAAA7ABEAAgADAAcAAAA8ABEAAgADAAcAAAA9ABEAAgADAAcAAAA+ABEAAgADAAcAAAA/ABEAAgADAAcAAABAABEAAgADAAcAAABBABEAAgADAAcAAABCABEAAgADAAcAAABDABEAAgADAAcAAAA=")
+
+[node name="WorldBoundary" parent="." unique_id=378975517 instance=ExtResource("6_8x0oe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" unique_id=823427919]
+position = Vector2(4, 0)
+shape = SubResource("WorldBoundaryShape2D_oho3u")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="WorldBoundary2" parent="." unique_id=1584756000 instance=ExtResource("6_8x0oe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary2" unique_id=201901952]
+position = Vector2(1087, 0)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_oho3u")
+debug_color = Color(0.9607843, 0, 0, 1)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=496989603]
+unique_name_in_owner = true
+position = Vector2(307, 227)
+
+[node name="DeathBoundary" parent="." unique_id=1620911427 instance=ExtResource("8_iiew0")]
+position = Vector2(669, 486)
+
+[node name="Enemy" parent="." unique_id=53468235 instance=ExtResource("7_avelk")]
+position = Vector2(565, 261)

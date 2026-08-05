@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://5hq7demdfp3d" path="res://Scenes/player/attacks/bullet/bullet.gd" id="1_0hgxc"]
+[ext_resource type="Texture2D" uid="uid://os2j2gp2g28s" path="res://Game Assets/fx/player_bullet_v2.png" id="2_fias7"]
+[ext_resource type="PackedScene" uid="uid://c5llwuwflcb7i" path="res://Scenes/components/hurtbox/hurtbox.tscn" id="3_51wyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51wyp"]
+atlas = ExtResource("2_fias7")
+region = Rect2(0, 0, 236, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv4fd"]
+atlas = ExtResource("2_fias7")
+region = Rect2(236, 0, 236, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpj3w"]
+atlas = ExtResource("2_fias7")
+region = Rect2(472, 0, 236, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs8js"]
+atlas = ExtResource("2_fias7")
+region = Rect2(708, 0, 236, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvum4"]
+atlas = ExtResource("2_fias7")
+region = Rect2(944, 0, 236, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hgxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51wyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv4fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpj3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs8js")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvum4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lv4fd"]
+size = Vector2(13, 11)
+
+[node name="Bullet" type="Area2D" unique_id=1336616491]
+script = ExtResource("1_0hgxc")
+bullet_speed = 650.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=987309469]
+position = Vector2(-2.3841858e-07, 0)
+scale = Vector2(0.16, 0.16)
+modulate = Color(1, 0.45, 0.25, 1)
+sprite_frames = SubResource("SpriteFrames_0hgxc")
+autoplay = "default"
+
+[node name="Hurtbox" parent="." unique_id=1409369977 instance=ExtResource("3_51wyp")]
+collision_layer = 256
+collision_mask = 16
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1849811846]
+position = Vector2(6.375, 0.5)
+shape = SubResource("RectangleShape2D_lv4fd")
+debug_color = Color(1, 0.3, 0, 0.22745098)

@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://l4it0vhsex0u"]
+
+[ext_resource type="Script" uid="uid://c5tovc282lkq8" path="res://Scenes/enemies/Cyborg.gd" id="1_wbq3y"]
+[ext_resource type="Texture2D" uid="uid://cerawojga34wi" path="res://Game Assets/Characters/Enemies/Sci-Fi Warrior/Sci-Fi Warrior Final.png" id="2_notgg"]
+[ext_resource type="PackedScene" uid="uid://c5llwuwflcb7i" path="res://Scenes/components/hurtbox/hurtbox.tscn" id="3_hwxky"]
+[ext_resource type="PackedScene" uid="uid://b3yphldfjy8x" path="res://Scenes/components/hitbox/hitbox.tscn" id="4_b648t"]
+[ext_resource type="PackedScene" uid="uid://yo2txo34tpu" path="res://Scenes/components/detection/detection_component.tscn" id="5_b648t"]
+[ext_resource type="Script" uid="uid://c8vqclaey51kk" path="res://Scenes/enemies/state/enemy_state_machine.gd" id="6_adtgv"]
+[ext_resource type="Script" uid="uid://b3n8u8e1a4n5k" path="res://Scenes/enemies/state/idle_state.gd" id="7_7p177"]
+[ext_resource type="Script" uid="uid://cj6h067ipbj2f" path="res://Scenes/enemies/state/run_state.gd" id="8_h62jm"]
+[ext_resource type="AudioStream" uid="uid://ests1emajjex" path="res://Game Assets/SFX/53439420-retro-hurt-sound-03-474780.mp3" id="9_lcl4y"]
+
+[sub_resource type="Animation" id="Animation_cpjt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.995, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_notgg"]
+resource_name = "idle"
+length = 0.5
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(5.995, 0), Vector2(3.985, 0), Vector2(3.015, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_we58l"]
+resource_name = "run"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7, 8, 9, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3.015, 0), Vector2(3.99, 0), Vector2(0.05, 0), Vector2(0.97, 0), Vector2(7.005, 1.32), Vector2(3.025, 1.36), Vector2(2.025, 1.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpjt6"]
+_data = {
+&"RESET": SubResource("Animation_cpjt6"),
+&"idle": SubResource("Animation_notgg"),
+&"run": SubResource("Animation_we58l")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_notgg"]
+size = Vector2(11, 3)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b648t"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwxky"]
+radius = 7.0
+height = 34.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b648t"]
+radius = 184.0
+
+[node name="Cyborg" type="CharacterBody2D" unique_id=53468235]
+scale = Vector2(-1, 1)
+collision_layer = 16
+collision_mask = 256
+script = ExtResource("1_wbq3y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1610959177]
+position = Vector2(0, -20.33)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_notgg")
+offset = Vector2(5.995, 0)
+hframes = 8
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=461822883]
+libraries/ = SubResource("AnimationLibrary_cpjt6")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1657818345]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_notgg")
+
+[node name="Hurtbox" parent="." unique_id=1409369976 instance=ExtResource("3_hwxky")]
+collision_layer = 16
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=2053944065]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_b648t")
+debug_color = Color(0, 1, 0.18431373, 0.30588236)
+
+[node name="Hitbox" parent="." unique_id=1040752718 instance=ExtResource("4_b648t")]
+collision_layer = 16
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1169235313]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_hwxky")
+debug_color = Color(0.9607843, 0, 0, 0.2)
+
+[node name="Components" type="Node2D" parent="." unique_id=424544166]
+
+[node name="DetectionComponent" parent="Components" unique_id=2043037165 instance=ExtResource("5_b648t")]
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/DetectionComponent" unique_id=1219967160]
+shape = SubResource("CircleShape2D_b648t")
+debug_color = Color(0.78431374, 0.43529412, 0, 0.03137255)
+
+[node name="EnemyStateMachine" type="Node" parent="." unique_id=1022603849]
+script = ExtResource("6_adtgv")
+
+[node name="IdleState" type="Node" parent="EnemyStateMachine" unique_id=1338349206]
+script = ExtResource("7_7p177")
+
+[node name="RunState" type="Node" parent="EnemyStateMachine" unique_id=217264900]
+script = ExtResource("8_h62jm")
+
+[node name="Audio" type="Node" parent="." unique_id=942850683]
+
+[node name="DamagedAudio" type="AudioStreamPlayer" parent="Audio" unique_id=1676739260]
+stream = ExtResource("9_lcl4y")

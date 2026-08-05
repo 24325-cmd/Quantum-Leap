@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfhen0ryqdhil"
+path="res://.godot/imported/53439420-retro-jump-sound-03-474788.mp3-e3928017295898657789362a47b16315.mp3str"
+
+[deps]
+
+source_file="res://Game Assets/SFX/53439420-retro-jump-sound-03-474788.mp3"
+dest_files=["res://.godot/imported/53439420-retro-jump-sound-03-474788.mp3-e3928017295898657789362a47b16315.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
